@@ -41,7 +41,8 @@
                     </form>
                 </div>
                 <div class="card-footer text-muted">
-                    Créé il y a pas longtemps
+                   <h5>Poster il y a {{ $twoot->created_at->diffInMinutes()  }} min</h5>
+                   <h5>{{ $twoot->created_at->diffForHumans()  }}</h5>
                 </div>
             </div>
         @endforeach
