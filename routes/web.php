@@ -1,7 +1,8 @@
 <?php
 
 use App\Twoot;
-
+//pour debuger dd()
+//dd(request())
 Route::get('/', function () {
     // Récupérer tous les "twoots" et les ajouter à la vue
     return view('app')->with([
@@ -24,7 +25,7 @@ Route::post('twoots', function(){
 
 Route::delete('twoots/{id}', function($id){
 //    Trouver le twoot, puis le supprimer
-   Twoot::twoot($id)-> destroy();
+   Twoot::find($id)->delete();
 
     return redirect()->to('/');
 });
